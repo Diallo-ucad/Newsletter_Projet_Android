@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity(), CellClickListener {
 
         if (Contents.isFetched.not()){
             val activityRout=this
+            // Coroutine
             GlobalScope.launch(Dispatchers.Main) {
                 Contents.fetchAllArticles()
                changeFragment(AcceuilFragment(activityRout))

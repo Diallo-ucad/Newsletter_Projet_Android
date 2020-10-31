@@ -12,6 +12,7 @@ import com.mbds.newsletter.R
 import com.mbds.newsletter.adapters.ArticleRecyclerViewAdapter
 import com.mbds.newsletter.adapters.CategoryRecyclerViewAdapter
 import com.mbds.newsletter.changeFragment
+import com.mbds.newsletter.fragments.AcceuilFragment
 import com.mbds.newsletter.model.Category
 import com.mbds.newsletter.repository.Contents
 import com.mbds.newsletter.utils.CellClickListener
@@ -33,11 +34,13 @@ class EditorFragment(private val cellClickListener: CellClickListener) : Fragmen
         super.onViewCreated(view, savedInstanceState)
 
         val recyclerView: RecyclerView = view.findViewById(R.id.recycler_view)
-        val articles = Contents.categoryList()
+        GlobalScope.launch(Dispatchers.Main) {
+            val articles = Contents.editorList()
+            val adapterRecycler = CategoryRecyclerViewAdapter(articles, cellClickListener)
+            recyclerView.layoutManager = GridLayoutManager(view.context, 1)
+            recyclerView.adapter = adapterRecycler
+        }
 
-        val adapterRecycler = CategoryRecyclerViewAdapter(articles, cellClickListener)
-        recyclerView.layoutManager = GridLayoutManager(view.context, 1)
-        recyclerView.adapter = adapterRecycler
 
     }
 

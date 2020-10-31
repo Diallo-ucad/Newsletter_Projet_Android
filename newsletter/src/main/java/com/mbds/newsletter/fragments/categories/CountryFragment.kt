@@ -33,7 +33,7 @@ class CountryFragment(private val cellClickListener: CellClickListener) : Fragme
         super.onViewCreated(view, savedInstanceState)
 
         val recyclerView: RecyclerView = view.findViewById(R.id.recycler_view)
-        val articles = Contents.categoryList()
+        val articles = Contents.countryList()
 
         val adapterRecycler = CategoryRecyclerViewAdapter(articles, cellClickListener)
         recyclerView.layoutManager = GridLayoutManager(view.context, 1)

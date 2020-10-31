@@ -2,6 +2,7 @@ package com.mbds.newsletter.repository
 
 import com.mbds.newsletter.model.Category
 import com.mbds.newsletter.model.ArticleItem
+import com.mbds.newsletter.model.editor.EditorItem
 import com.mbds.newsletter.services.ArticleService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -41,6 +42,8 @@ object Contents {
         isFetched = true
     }
     fun categoryList(): List<Category> = CategoriesData.dataList
+    fun countryList(): List<Category> = CountriesData.dataList
+    suspend fun editorList(): List<Category> = EditorData.dataList(apiKey)
     init {
         // Loggin
         val logging = HttpLoggingInterceptor()
