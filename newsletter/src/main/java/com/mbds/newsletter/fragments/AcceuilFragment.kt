@@ -5,12 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
 import com.mbds.newsletter.MainActivity
-import com.mbds.newsletter.R
 import com.mbds.newsletter.changeFragment
 import com.mbds.newsletter.databinding.FragmentAcceuilBinding
+import com.mbds.newsletter.fragments.categories.CategoriesFragment
+import com.mbds.newsletter.fragments.categories.CountryFragment
+import com.mbds.newsletter.fragments.categories.EditorFragment
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -56,12 +56,31 @@ class AcceuilFragment(private val activityRoot: MainActivity): Fragment() {
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_acceuil, container, false)
        binding.openCategory.setOnClickListener {
-
-
-           activityRoot.changeFragment(CategoriesFragment(activityRoot))
+           activityRoot.changeFragment(
+               CategoriesFragment(
+                   activityRoot
+               )
+           )
        }
+        //bouton country
+        binding.openByCountry.setOnClickListener {
+            activityRoot.changeFragment(
+                CountryFragment(
+                    activityRoot
+                )
+            )
+        }
+        //bouton editor
+        binding.openByEditor.setOnClickListener {
+            activityRoot.changeFragment(
+                EditorFragment(
+                    activityRoot
+                )
+            )
+        }
         return binding.root
     }
+
 
 
 }

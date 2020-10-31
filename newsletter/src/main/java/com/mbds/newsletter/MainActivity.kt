@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.mbds.newsletter.fragments.AcceuilFragment
-import com.mbds.newsletter.fragments.CategoriesFragment
 import com.mbds.newsletter.fragments.ArticlesFragment
 import com.mbds.newsletter.model.Category
 import com.mbds.newsletter.repository.Contents

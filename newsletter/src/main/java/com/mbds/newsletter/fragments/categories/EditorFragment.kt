@@ -1,4 +1,4 @@
-package com.mbds.newsletter.fragments
+package com.mbds.newsletter.fragments.categories
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -19,14 +19,14 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-class CategoriesFragment(private val cellClickListener: CellClickListener) : Fragment() {
+class EditorFragment(private val cellClickListener: CellClickListener) : Fragment() {
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        activity?.title = "Catégories"
+        activity?.title = "Editor"
         return inflater.inflate(R.layout.fragment_categories, container, false)
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
