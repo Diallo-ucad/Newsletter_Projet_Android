@@ -31,7 +31,6 @@ class CategoryRecyclerViewAdapter(private val dataset: List<Category>, private v
             }
 
 
-
             Glide
                 .with(root)
                 .load(item.image)

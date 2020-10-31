@@ -3,6 +3,7 @@ package com.mbds.newsletter
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.mbds.newsletter.fragments.AcceuilFragment
 import com.mbds.newsletter.fragments.CategoriesFragment
 import com.mbds.newsletter.fragments.ArticlesFragment
 import com.mbds.newsletter.model.Category
@@ -20,13 +21,14 @@ class MainActivity : AppCompatActivity(), CellClickListener {
         setContentView(R.layout.activity_main)
 
         if (Contents.isFetched.not()){
+            val activityRout=this
             GlobalScope.launch(Dispatchers.Main) {
                 Contents.fetchAllArticles()
-                changeFragment(CategoriesFragment(cellClickListener))
+               changeFragment(AcceuilFragment(activityRout))
             }
         }
         else {
-            changeFragment(CategoriesFragment(this))
+             changeFragment(AcceuilFragment(this))
         }
     }
     override fun onCellClickListener(category: Category) {
@@ -46,4 +48,5 @@ fun MainActivity.changeFragment(fragment: Fragment) {
         addToBackStack(null)
     }.commit()
     // 5) on commit la transaction
+
 }

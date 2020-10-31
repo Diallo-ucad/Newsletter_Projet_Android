@@ -20,12 +20,10 @@ import kotlinx.coroutines.launch
  * A fragment representing a list of Items.
  */
 class ArticlesFragment(private val category: Category) : Fragment() {
-
     private var columnCount = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         arguments?.let {
             columnCount = it.getInt(ARG_COLUMN_COUNT)
         }
