@@ -1,5 +1,6 @@
 *.iml
 .gradle
+*.bin
 /local.properties
 /.idea/caches
 /.idea/libraries
@@ -13,3 +14,9 @@
 .externalNativeBuild
 .cxx
 local.properties
+.gradle/6.5/executionHistory/executionHistory.bin
+.gradle/6.5/executionHistory/executionHistory.lock
+.gradle/6.5/fileHashes/fileHashes.bin
+.gradle/6.5/fileHashes/fileHashes.lock
+.idea/caches/build_file_checksums.ser
+.gradle/buildOutputCleanup/buildOutputCleanup.lock
