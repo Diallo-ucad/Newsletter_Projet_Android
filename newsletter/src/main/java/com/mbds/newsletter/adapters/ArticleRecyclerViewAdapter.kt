@@ -23,7 +23,6 @@ class ArticleRecyclerViewAdapter(
             .inflate(R.layout.article_item, parent, false)
         return ViewHolder(view)
     }
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = values[position]
         val description: String = when(item.description != null){
@@ -47,7 +46,7 @@ class ArticleRecyclerViewAdapter(
         Glide
             .with(holder.view)
             .load(item.urlToImage)
-            .fitCenter()
+            .centerCrop()
             .placeholder(R.drawable.placeholder)
             .into(holder.imgView);
     }
