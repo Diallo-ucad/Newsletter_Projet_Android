@@ -33,10 +33,13 @@ class ArticleRecyclerViewAdapter(
         val titleAuthor = item.title.split("-")
         holder.contentView.text = titleAuthor[0]
         holder.descriptionView.text = description
-        holder.authorView.text = when(titleAuthor[1].length <= 25){
-            true -> titleAuthor[1]
-            else -> item.author
-        }
+        if (titleAuthor.size >= 2){
+            holder.authorView.text = when(titleAuthor[1].length <= 25){
+                true -> titleAuthor[1]
+                else -> item.author
+            }
+        }else holder.authorView.text = ""
+
         holder.dateView.text = DateUtils.getRelativeTimeSpanString(
                 item.publishedAt.time,
             Date().time,

@@ -26,7 +26,7 @@ class CategoryRecyclerViewAdapter(private val dataset: List<Category>, private v
             val subTitle = root.findViewById<TextView>(R.id.category_subtitle)
             txtName.text = item.label.capitalize()
             subTitle.text = when(nb_articles == null){
-                true -> "fetching ..."
+                true -> ""
                 else -> subTileStr
             }
 

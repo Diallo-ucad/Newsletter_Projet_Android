@@ -21,9 +21,12 @@ object EditorData {
         if (sources != null) {
             return  sources.map{
                 Category(
-                    name = it.id,
+                    name = "Sources",
                     label = it.name,
-                    image = "https://picsum.photos/500/300?random=${r++}"
+                    image = "https://picsum.photos/500/300?random=${r++}",
+                    category="",
+                    source=it.id,
+                    country=""
                 )
             }
         }

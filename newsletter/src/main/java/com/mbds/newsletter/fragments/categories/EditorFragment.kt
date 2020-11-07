@@ -27,7 +27,7 @@ class EditorFragment(private val cellClickListener: CellClickListener) : Fragmen
             savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        activity?.title = "Editor"
+        activity?.title = "Sources"
         return inflater.inflate(R.layout.fragment_categories, container, false)
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
