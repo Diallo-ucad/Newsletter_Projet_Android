@@ -18,7 +18,8 @@ class MainActivity : AppCompatActivity(), CellClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        changeFragment(AcceuilFragment(this))
+        /*
         if (Contents.isFetched.not()){
             val activityRout=this
             // Coroutine
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity(), CellClickListener {
         else {
              changeFragment(AcceuilFragment(this))
         }
+         */
     }
     override fun onCellClickListener(category: Category) {
         println("Catégory cliquée : $category")

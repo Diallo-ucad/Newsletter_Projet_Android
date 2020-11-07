@@ -31,7 +31,7 @@ class ArticlesFragment(private val category: Category) : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        activity?.title = "Catégorie - ${category.label.toLowerCase()}"
+        activity?.title = "${category.name} - ${category.label.toLowerCase()}"
 
         val view = inflater.inflate(R.layout.fragment_articles, container, false)
 
@@ -43,7 +43,7 @@ class ArticlesFragment(private val category: Category) : Fragment() {
                     else -> GridLayoutManager(context, columnCount)
                 }
                 GlobalScope.launch(Dispatchers.Main) {
-                    adapter = Contents.categoryArticles[category.name]?.let {
+                    adapter = Contents.articleList(category)?.let {
                         ArticleRecyclerViewAdapter(
                             it
                         )

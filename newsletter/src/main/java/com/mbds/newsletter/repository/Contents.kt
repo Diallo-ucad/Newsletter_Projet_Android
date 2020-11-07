@@ -2,7 +2,6 @@ package com.mbds.newsletter.repository
 
 import com.mbds.newsletter.model.Category
 import com.mbds.newsletter.model.ArticleItem
-import com.mbds.newsletter.model.editor.EditorItem
 import com.mbds.newsletter.services.ArticleService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -19,14 +18,19 @@ import retrofit2.converter.gson.GsonConverterFactory
 object Contents {
     private val service: ArticleService
     private const val baseUrl: String = "http://newsapi.org/v2/"
-    private const val apiKey: String = "1103f0429e98441f906d0866a01ce7cd"//"e547106de0e74054bf6ab4f63a9a2e59"
+    private const val apiKey: String = "e547106de0e74054bf6ab4f63a9a2e59"//"1103f0429e98441f906d0866a01ce7cd"
     private const val country: String = "fr"
     var isFetched = false
 
     val categoryArticles = mutableMapOf<String, List<ArticleItem>>()
 
-    private suspend fun articleList(category: Category): List<ArticleItem> {
-        val response = service.list(category = category.name, apiKey = apiKey, country = country)
+    suspend fun articleList(category: Category): List<ArticleItem> {
+        val response = service.list(
+                category = category.category,
+                apiKey = apiKey,
+                country = category.country,
+                sources = category.source
+        )
         val articles: List<ArticleItem>? = response.body()?.articles
             ?.filter {
                 !it.urlToImage.isNullOrBlank()

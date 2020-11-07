@@ -26,7 +26,7 @@ class CountryFragment(private val cellClickListener: CellClickListener) : Fragme
             savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        activity?.title = "Country"
+        activity?.title = "Pays"
         return inflater.inflate(R.layout.fragment_categories, container, false)
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -51,6 +51,7 @@ class AcceuilFragment(private val activityRoot: MainActivity): Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        activity?.title = "Acceuil"
         binding = FragmentAcceuilBinding.inflate(inflater, container, false)
 
         // Inflate the layout for this fragment

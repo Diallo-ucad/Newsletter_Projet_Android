@@ -8,9 +8,10 @@ import retrofit2.http.Query
 interface ArticleService {
     @GET("top-headlines")
     suspend fun list(
-        @Query("category") category: String = "health",
-        @Query("apiKey") apiKey: String,
-        @Query("country") country: String = "fr"
+            @Query("category") category: String,
+            @Query("apiKey") apiKey: String,
+            @Query("country") country: String,
+            @Query("sources") sources: String,
     ): Response<ArticleObject>
 }
 
