@@ -49,7 +49,7 @@ class ArticleRecyclerViewAdapter(
         Glide
             .with(holder.view)
             .load(item.urlToImage)
-            .circleCrop()
+            .centerCrop()
             .placeholder(R.drawable.placeholder)
             .into(holder.imgView);
     }
