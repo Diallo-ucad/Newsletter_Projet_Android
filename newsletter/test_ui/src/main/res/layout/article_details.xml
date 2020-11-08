@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="15dp"
+    android:padding="5dp"
+    app:cardCornerRadius="5dp"
+    app:strokeWidth="0.5dp"
+    app:strokeColor="@android:color/darker_gray"
+    app:shapeAppearance="@color/black"
+    app:cardElevation="0dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="2dp"
+        >
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/articleDetails_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher_background"
+            android:layout_marginBottom="5dp"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/articleDetails_title"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp"
+            android:layout_marginBottom="10dp"
+            android:paddingLeft="5dp"
+            android:text="test2"
+            android:textAppearance="?attr/textAppearanceListItem" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/articleDetails_description"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/darker_gray"
+            android:layout_margin="0dp"
+            android:layout_marginBottom="25dp"
+            android:paddingLeft="5dp"
+            android:text="test2"
+            android:textAppearance="?attr/textAppearanceListItem" />
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:padding="5dp"
+            android:orientation="horizontal">
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/articleDetails_author"
+                style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:text="author"
+                android:textAppearance="?attr/textAppearanceListItem" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/articleDetails_date"
+                style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="3"
+                android:layout_margin="0dp"
+                android:text="date"
+                android:textAppearance="?attr/textAppearanceListItem" />
+
+            <ImageButton
+                android:id="@+id/favbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00ffffff"
+                android:src="@drawable/heart_off"
+                android:clickable="true"
+                android:onClick="onClick"
+                 />
+
+
+        </GridLayout>
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
