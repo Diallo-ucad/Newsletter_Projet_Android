@@ -7,22 +7,24 @@
     android:layout_marginBottom="15dp"
     android:padding="5dp"
     app:cardCornerRadius="5dp"
-    app:strokeWidth="0.5dp"
-    app:strokeColor="@android:color/darker_gray"
+    app:cardElevation="0dp"
+    app:checkedIconTint="#D10F0F"
     app:shapeAppearance="@color/black"
-    app:cardElevation="0dp">
+    app:strokeColor="@android:color/darker_gray"
+    app:strokeWidth="0.5dp">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_marginBottom="2dp"
-       >
+        android:orientation="vertical">
+
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/article_img"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher_background"
-            android:layout_marginBottom="5dp"/>
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/ic_launcher_background" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/article_title"
@@ -40,18 +42,20 @@
             style="@style/TextAppearance.AppCompat.Body2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/darker_gray"
             android:layout_margin="@dimen/text_margin"
             android:layout_marginBottom="25dp"
             android:paddingLeft="5dp"
             android:text="test2"
-            android:textAppearance="?attr/textAppearanceListItem" />
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textColor="@android:color/darker_gray" />
+
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:padding="5dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="5dp">
+
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/article_author"
                 style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
@@ -64,13 +68,26 @@
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/article_date"
                 style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="86dp"
+                android:layout_height="33dp"
                 android:layout_row="0"
                 android:layout_column="2"
                 android:layout_margin="@dimen/text_margin"
                 android:text="date"
+                android:textAlignment="center"
                 android:textAppearance="?attr/textAppearanceListItem" />
+
+            <Button
+                android:id="@+id/btn_favories"
+                android:layout_width="39dp"
+                android:layout_height="33dp"
+                android:layout_row="0"
+                android:layout_column="3"
+                android:layout_margin="10dp"
+                android:background="@drawable/ic_favorite_red_24"
+                android:gravity="bottom|end"
+                android:text=""
+                app:backgroundTint="#DC1212" />
         </GridLayout>
     </LinearLayout>
 
