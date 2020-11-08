@@ -2,6 +2,7 @@ package com.mbds.newsletter.repository
 
 import com.mbds.newsletter.model.Category
 import com.mbds.newsletter.model.ArticleItem
+import com.mbds.newsletter.model.aproposdenous.Aproposdenous_devInfoItem
 import com.mbds.newsletter.services.ArticleService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -46,6 +47,16 @@ object Contents {
         isFetched = true
     }
     fun categoryList(): List<Category> = CategoriesData.dataList
+
+    /**
+     * Fonction pour gerer la vue a propos de nous
+     */
+
+    fun aproposdenousList(): List<Aproposdenous_devInfoItem> = AproposdenousData.dataList
+
+    /**
+     * *****************************************************************************************
+     */
     fun countryList(): List<Category> = CountriesData.dataList
     suspend fun editorList(): List<Category> = EditorData.dataList(apiKey)
     init {
@@ -60,9 +71,7 @@ object Contents {
             .addConverterFactory(GsonConverterFactory.create())
             .client(httpClient.build())
             .build()
-
         service = retrofit.create(ArticleService::class.java)
     }
-
 
 }

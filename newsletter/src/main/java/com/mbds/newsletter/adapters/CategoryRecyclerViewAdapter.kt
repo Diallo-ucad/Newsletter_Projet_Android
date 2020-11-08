@@ -24,6 +24,8 @@ class CategoryRecyclerViewAdapter(private val dataset: List<Category>, private v
             val txtName = root.findViewById<TextView>(R.id.category_name)
             val imageView = root.findViewById<ImageView>(R.id.category_image)
             val subTitle = root.findViewById<TextView>(R.id.category_subtitle)
+
+
             txtName.text = item.label.capitalize()
             subTitle.text = when(nb_articles == null){
                 true -> ""
