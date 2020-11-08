@@ -7,19 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.mbds.newsletter.MainActivity
 import com.mbds.newsletter.R
-import com.mbds.newsletter.adapters.AproposDenousDeveloppersRecyclerViewAdapter
 import com.mbds.newsletter.adapters.AproposDenousFonctionnalitiesRecyclerViewAdapter
-import com.mbds.newsletter.adapters.ArticleRecyclerViewAdapter
-import com.mbds.newsletter.adapters.CategoryRecyclerViewAdapter
-import com.mbds.newsletter.changeFragment
-import com.mbds.newsletter.model.Category
 import com.mbds.newsletter.repository.Contents
 import com.mbds.newsletter.utils.CellClickListener
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 class AproposDeNousFonctionnalitiesFragment(private val cellClickListener: CellClickListener) : Fragment() {
 
@@ -29,7 +20,7 @@ class AproposDeNousFonctionnalitiesFragment(private val cellClickListener: CellC
     ): View? {
         // Inflate the layout for this fragment
         activity?.title = "A Propos De Nous"
-        return inflater.inflate(R.layout.fragment_apropos_denous, container, false)
+        return inflater.inflate(R.layout.fragment_apropos_denous_fonctionnalities, container, false)
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

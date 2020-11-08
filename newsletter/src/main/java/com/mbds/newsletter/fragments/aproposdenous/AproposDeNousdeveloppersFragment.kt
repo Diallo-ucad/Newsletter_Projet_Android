@@ -7,16 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.mbds.newsletter.MainActivity
 import com.mbds.newsletter.R
 import com.mbds.newsletter.adapters.*
-import com.mbds.newsletter.changeFragment
-import com.mbds.newsletter.model.Category
 import com.mbds.newsletter.repository.Contents
 import com.mbds.newsletter.utils.CellClickListener
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 class AproposDeNousdeveloppersFragment(private val cellClickListener: CellClickListener) : Fragment() {
 
@@ -26,7 +20,7 @@ class AproposDeNousdeveloppersFragment(private val cellClickListener: CellClickL
     ): View? {
         // Inflate the layout for this fragment
         activity?.title = "A Propos De Nous"
-        return inflater.inflate(R.layout.fragment_apropos_denous, container, false)
+        return inflater.inflate(R.layout.fragment_apropos_denous_developpers, container, false)
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -40,24 +34,29 @@ class AproposDeNousdeveloppersFragment(private val cellClickListener: CellClickL
         recyclerViewdevinfo.layoutManager = GridLayoutManager(view.context, 1)
         recyclerViewdevinfo.adapter = adapterRecyclerdevinfo
 
-
-        //**********************Fonctionnalities********************************
-
-        val recyclerView: RecyclerView = view.findViewById(R.id.fonctionalities_infos)
-        val aproposdenousfontionnalitiesitem = Contents.aproposdenousFonctionalitiesList()
-
-        val adapterRecyclerfonctionnalities = AproposDenousFonctionnalitiesRecyclerViewAdapter(aproposdenousfontionnalitiesitem, cellClickListener)
-        recyclerView.layoutManager = GridLayoutManager(view.context, 1)
-        recyclerView.adapter = adapterRecyclerfonctionnalities
-
-        //***********************Librairies************************************
-        val recyclerViewlibrairie: RecyclerView = view.findViewById(R.id.librairies_infos)
-        val aproposdenousLibrairiesitem = Contents.aproposdenouslibrairiesList()
-
-        val adapterRecyclerlibrairies = AproposDenousLibrairiesRecyclerViewAdapter(aproposdenousLibrairiesitem, cellClickListener)
-        recyclerViewlibrairie.layoutManager = GridLayoutManager(view.context, 1)
-        recyclerViewlibrairie.adapter = adapterRecyclerlibrairies
-
     }
 
+
+
 }
+
+/**
+ *
+//**********************Fonctionnalities********************************
+
+val recyclerView: RecyclerView = view.findViewById(R.id.fonctionalities_infos)
+val aproposdenousfontionnalitiesitem = Contents.aproposdenousFonctionalitiesList()
+
+val adapterRecyclerfonctionnalities = AproposDenousFonctionnalitiesRecyclerViewAdapter(aproposdenousfontionnalitiesitem, cellClickListener)
+recyclerView.layoutManager = GridLayoutManager(view.context, 1)
+recyclerView.adapter = adapterRecyclerfonctionnalities
+
+//***********************Librairies************************************
+val recyclerViewlibrairie: RecyclerView = view.findViewById(R.id.librairies_infos)
+val aproposdenousLibrairiesitem = Contents.aproposdenouslibrairiesList()
+
+val adapterRecyclerlibrairies = AproposDenousLibrairiesRecyclerViewAdapter(aproposdenousLibrairiesitem, cellClickListener)
+recyclerViewlibrairie.layoutManager = GridLayoutManager(view.context, 1)
+recyclerViewlibrairie.adapter = adapterRecyclerlibrairies
+
+**/
