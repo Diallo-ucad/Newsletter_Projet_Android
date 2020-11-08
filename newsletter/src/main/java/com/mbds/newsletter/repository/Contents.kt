@@ -57,6 +57,9 @@ object Contents {
 
     fun aproposdenousFonctionalitiesList(): List<Aproposdenous_fonctionalitieItem> = AproposdenousFonctionnalitiesData.dataList
 
+    fun listArticleFavori(): List<ArticleItem>{
+        return emptyList()
+    }
     /**
      * *****************************************************************************************
      */

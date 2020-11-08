@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.mbds.newsletter.fragments.ArticlesFragment
 import com.mbds.newsletter.fragments.aproposdenous.AproposDeNousdeveloppersFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.mbds.newsletter.fragments.AcceuilFragment
+import com.mbds.newsletter.fragments.favoris.ArticleFavorisFragment
 import com.mbds.newsletter.model.Category
 import com.mbds.newsletter.utils.CellClickListener
 
@@ -14,7 +17,16 @@ class MainActivity : AppCompatActivity(), CellClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        changeFragment(AproposDeNousdeveloppersFragment(this))
+        changeFragment(AcceuilFragment(this))
+        val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottom_navigation)
+        bottomNavigationView.setOnNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.page_1 -> changeFragment(AcceuilFragment(this))
+                R.id.page_2 -> changeFragment(ArticleFavorisFragment())
+                R.id.page_3 -> changeFragment(AproposDeNousdeveloppersFragment(this))
+            }
+            true
+        }
         /*
         if (Contents.isFetched.not()){
             val activityRout=this
