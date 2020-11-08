@@ -3,6 +3,7 @@ package com.mbds.newsletter.repository
 import com.mbds.newsletter.model.Category
 import com.mbds.newsletter.model.ArticleItem
 import com.mbds.newsletter.model.aproposdenous.Aproposdenous_devInfoItem
+import com.mbds.newsletter.model.aproposdenous.Aproposdenous_fonctionalitieItem
 import com.mbds.newsletter.services.ArticleService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -52,7 +53,9 @@ object Contents {
      * Fonction pour gerer la vue a propos de nous
      */
 
-    fun aproposdenousList(): List<Aproposdenous_devInfoItem> = AproposdenousData.dataList
+    fun aproposdenousList(): List<Aproposdenous_devInfoItem> = AproposdenousDevelopperData.dataList
+
+    fun aproposdenousFonctionalitiesList(): List<Aproposdenous_fonctionalitieItem> = AproposdenousFonctionnalitiesData.dataList
 
     /**
      * *****************************************************************************************

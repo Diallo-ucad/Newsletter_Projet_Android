@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="250dp"
             app:layout_constraintGuide_percent=".30"
-            android:layout_row="0"
+            android:layout_row="1"
             android:layout_column="0"
             android:layout_marginTop="2dp"
             android:scrollbars="horizontal"
@@ -29,7 +29,7 @@
             android:layout_height="250dp"
             android:layout_column="0"
             android:layout_marginTop="2dp"
-            android:layout_row="1"
+            android:layout_row="0"
             tools:listitem="@layout/fonctionnalitie_item"
             />
         <androidx.recyclerview.widget.RecyclerView

@@ -2,7 +2,7 @@ package com.mbds.newsletter.repository
 
 import com.mbds.newsletter.model.aproposdenous.Aproposdenous_devInfoItem
 
-object AproposdenousData {
+object AproposdenousDevelopperData {
     val dataList = listOf(
         Aproposdenous_devInfoItem(
             fullName="DIALLO ELHADJ MAMADOU FOULA",

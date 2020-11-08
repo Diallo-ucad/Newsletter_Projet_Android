@@ -12,8 +12,8 @@ import com.mbds.newsletter.model.aproposdenous.Aproposdenous_devInfoItem
 import com.mbds.newsletter.repository.Contents
 import com.mbds.newsletter.utils.CellClickListener
 
-class AproposDenousRecyclerViewAdapter(private val dataset: List<Aproposdenous_devInfoItem>, private val cellClickListener: CellClickListener) :
-    RecyclerView.Adapter<AproposDenousRecyclerViewAdapter.ViewHolder>() {
+class AproposDenousDeveloppersRecyclerViewAdapter(private val dataset: List<Aproposdenous_devInfoItem>, private val cellClickListener: CellClickListener) :
+    RecyclerView.Adapter<AproposDenousDeveloppersRecyclerViewAdapter.ViewHolder>() {
 
     class ViewHolder(val root: View) : RecyclerView.ViewHolder(root) {
         lateinit var aproposdenousDevInfoItem: Aproposdenous_devInfoItem

@@ -3,15 +3,10 @@ package com.mbds.newsletter
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.mbds.newsletter.fragments.AcceuilFragment
 import com.mbds.newsletter.fragments.ArticlesFragment
-import com.mbds.newsletter.fragments.aproposdenous.AproposDeNousFragment
+import com.mbds.newsletter.fragments.aproposdenous.AproposDeNousdeveloppersFragment
 import com.mbds.newsletter.model.Category
-import com.mbds.newsletter.repository.Contents
 import com.mbds.newsletter.utils.CellClickListener
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity(), CellClickListener {
 
@@ -19,7 +14,7 @@ class MainActivity : AppCompatActivity(), CellClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        changeFragment(AproposDeNousFragment(this))
+        changeFragment(AproposDeNousdeveloppersFragment(this))
         /*
         if (Contents.isFetched.not()){
             val activityRout=this
