@@ -4,6 +4,7 @@ import com.mbds.newsletter.model.Category
 import com.mbds.newsletter.model.ArticleItem
 import com.mbds.newsletter.model.aproposdenous.Aproposdenous_devInfoItem
 import com.mbds.newsletter.model.aproposdenous.Aproposdenous_fonctionalitieItem
+import com.mbds.newsletter.model.aproposdenous.Aproposdenous_librairiesItem
 import com.mbds.newsletter.services.ArticleService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -50,13 +51,26 @@ object Contents {
     fun categoryList(): List<Category> = CategoriesData.dataList
 
     /**
-     * Fonction pour gerer la vue a propos de nous
+     * Fonction pour gerer la vue a propos de nous--------------------------------------------------
      */
-
+    /**
+     * Developper infos list
+     */
     fun aproposdenousList(): List<Aproposdenous_devInfoItem> = AproposdenousDevelopperData.dataList
 
+    /**
+     * Fonctionnalities infos list
+     */
     fun aproposdenousFonctionalitiesList(): List<Aproposdenous_fonctionalitieItem> = AproposdenousFonctionnalitiesData.dataList
 
+    /**
+     * Librairies infos list
+     */
+    fun aproposdenouslibrairiesList(): List<Aproposdenous_librairiesItem> = AproposdenousLibrairiesData.dataList
+
+    /**
+     * Gestion des favories
+     */
     fun listArticleFavori(): List<ArticleItem>{
         return emptyList()
     }

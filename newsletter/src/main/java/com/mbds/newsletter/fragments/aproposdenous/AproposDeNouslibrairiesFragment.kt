@@ -18,7 +18,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-class AproposDeNousdeveloppersFragment(private val cellClickListener: CellClickListener) : Fragment() {
+class AproposDeNouslibrairiesFragment(private val cellClickListener: CellClickListener) : Fragment() {
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -31,32 +31,12 @@ class AproposDeNousdeveloppersFragment(private val cellClickListener: CellClickL
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //********************Developpers*************************************
-
-        val recyclerViewdevinfo: RecyclerView = view.findViewById(R.id.developper_infos)
-        val aproposdenousitem = Contents.aproposdenousList()
-
-        val adapterRecyclerdevinfo = AproposDenousDeveloppersRecyclerViewAdapter(aproposdenousitem, cellClickListener)
-        recyclerViewdevinfo.layoutManager = GridLayoutManager(view.context, 1)
-        recyclerViewdevinfo.adapter = adapterRecyclerdevinfo
-
-
-        //**********************Fonctionnalities********************************
-
-        val recyclerView: RecyclerView = view.findViewById(R.id.fonctionalities_infos)
-        val aproposdenousfontionnalitiesitem = Contents.aproposdenousFonctionalitiesList()
-
-        val adapterRecyclerfonctionnalities = AproposDenousFonctionnalitiesRecyclerViewAdapter(aproposdenousfontionnalitiesitem, cellClickListener)
-        recyclerView.layoutManager = GridLayoutManager(view.context, 1)
-        recyclerView.adapter = adapterRecyclerfonctionnalities
-
-        //***********************Librairies************************************
         val recyclerViewlibrairie: RecyclerView = view.findViewById(R.id.librairies_infos)
         val aproposdenousLibrairiesitem = Contents.aproposdenouslibrairiesList()
 
-        val adapterRecyclerlibrairies = AproposDenousLibrairiesRecyclerViewAdapter(aproposdenousLibrairiesitem, cellClickListener)
+        val adapterRecycler = AproposDenousLibrairiesRecyclerViewAdapter(aproposdenousLibrairiesitem, cellClickListener)
         recyclerViewlibrairie.layoutManager = GridLayoutManager(view.context, 1)
-        recyclerViewlibrairie.adapter = adapterRecyclerlibrairies
+        recyclerViewlibrairie.adapter = adapterRecycler
 
     }
 
