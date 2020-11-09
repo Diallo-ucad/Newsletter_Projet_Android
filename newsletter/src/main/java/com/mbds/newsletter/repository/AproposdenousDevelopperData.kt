@@ -16,6 +16,12 @@ object AproposdenousDevelopperData {
                     developper_git="Etudiant en Master 1 informatique(IFI) @uca-m1informatique-softeng ",
                 developper_img="https://media-exp1.licdn.com/dms/image/C4D03AQHcNLjx0cKP_A/profile-displayphoto-shrink_400_400/0?e=1610582400&v=beta&t=DhQVcFi3GwEZnapZ7WVn9Rl4Mz0yc5mlxl2Slz6uTQg"
 
+            ),
+            Aproposdenous_devInfoItem(
+                    fullName="Lys Ciela NITEKA",
+                    developper_git="Etudiant en Master 1 informatique(IFI) @uca-m1informatique-softeng ",
+                    developper_img="https://media-exp1.licdn.com/dms/image/C4D03AQHcNLjx0cKP_A/profile-displayphoto-shrink_400_400/0?e=1610582400&v=beta&t=DhQVcFi3GwEZnapZ7WVn9Rl4Mz0yc5mlxl2Slz6uTQg"
+
             )
     )
 }
