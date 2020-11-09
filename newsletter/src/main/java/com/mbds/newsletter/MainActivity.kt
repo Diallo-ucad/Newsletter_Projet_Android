@@ -7,6 +7,7 @@ import com.mbds.newsletter.fragments.ArticlesFragment
 import com.mbds.newsletter.fragments.aproposdenous.AproposDeNousdeveloppersFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.mbds.newsletter.fragments.AcceuilFragment
+import com.mbds.newsletter.fragments.aproposdenous.AproposDeNousFonctionnalitiesFragment
 import com.mbds.newsletter.fragments.favoris.ArticleFavorisFragment
 import com.mbds.newsletter.model.Category
 import com.mbds.newsletter.utils.CellClickListener

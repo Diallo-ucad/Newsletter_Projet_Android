@@ -17,7 +17,8 @@
             android:id="@+id/librairie_name"
             android:text="LIBRAIRIE NAME"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:textColor="@color/black">
         </com.google.android.material.textview.MaterialTextView>
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/librairie_description"
