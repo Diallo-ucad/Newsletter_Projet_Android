@@ -20,8 +20,8 @@ class AproposDenousDeveloppersRecyclerViewAdapter(private val dataset: List<Apro
         fun bind(item: Aproposdenous_devInfoItem) {
             aproposdenousDevInfoItem = item
 
-
-            val txtfullName = root.findViewById<TextView>(R.id.developper_fullName)
+            val txtfirstName = root.findViewById<TextView>(R.id.developper_firstName)
+            val txtlastName = root.findViewById<TextView>(R.id.developper_lastName)
             val dev_img = root.findViewById<ImageView>(R.id.developper_img)
             val githref = root.findViewById<TextView>(R.id.developper_git)
 
@@ -34,7 +34,8 @@ class AproposDenousDeveloppersRecyclerViewAdapter(private val dataset: List<Apro
                 .into(dev_img);
 
 
-            txtfullName.text=item.fullName.capitalize()
+            txtfirstName.text=item.firstName.capitalize()
+            txtlastName.text=item.lastName.capitalize()
             githref.text=item.developper_git.capitalize()
         }
     }

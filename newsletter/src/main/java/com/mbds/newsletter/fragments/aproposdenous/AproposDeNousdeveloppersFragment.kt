@@ -19,7 +19,7 @@ class AproposDeNousdeveloppersFragment(private val cellClickListener: CellClickL
             savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        activity?.title = "A Propos De Nous"
+        activity?.title = "A Propos De Nous - Developpers"
         return inflater.inflate(R.layout.fragment_apropos_denous_developpers, container, false)
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
