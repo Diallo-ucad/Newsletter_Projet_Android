@@ -32,11 +32,10 @@ class CategoryRecyclerViewAdapter(private val dataset: List<Category>, private v
                 else -> subTileStr
             }
 
-
             Glide
                 .with(root)
                 .load(item.image)
-                .circleCrop()
+                .fitCenter()
                 .placeholder(R.drawable.placeholder)
                 .into(imageView);
         }
