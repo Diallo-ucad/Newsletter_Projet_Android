@@ -96,6 +96,6 @@ object AproposdenousLibrairiesData {
          Aproposdenous_librairiesItem(
                   librairie_name = " implementation 'com.squareup.picasso:picasso:2.71828'",
                   librairie_description = "Une puissante bibliothèque de téléchargement d'images et de mise en cache pour Android "
-            ),
+            )
     )
 }
