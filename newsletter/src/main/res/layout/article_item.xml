@@ -6,12 +6,12 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="15dp"
     android:padding="5dp"
-    app:cardCornerRadius="5dp"
+    app:cardCornerRadius="2dp"
     app:cardElevation="0dp"
     app:checkedIconTint="#D10F0F"
-    app:shapeAppearance="@color/black"
-    app:strokeColor="@android:color/darker_gray"
-    app:strokeWidth="0.5dp">
+    app:shapeAppearance="@color/bottom_nav"
+    app:strokeColor="@color/teal_200"
+    app:strokeWidth="0.7dp">
 
     <LinearLayout
         android:layout_width="match_parent"

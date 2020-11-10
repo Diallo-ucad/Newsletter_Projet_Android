@@ -36,7 +36,7 @@ class CategoryRecyclerViewAdapter(private val dataset: List<Category>, private v
             Glide
                 .with(root)
                 .load(item.image)
-                .fitCenter()
+                .circleCrop()
                 .placeholder(R.drawable.placeholder)
                 .into(imageView);
         }
