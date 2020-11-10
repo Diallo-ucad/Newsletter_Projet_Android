@@ -46,6 +46,7 @@ object CategoriesData {
         ),
         Category(
             category="sports",
+            label="sports",
             source="",
             country="fr",
             name = "Catégory",
