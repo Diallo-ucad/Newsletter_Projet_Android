@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <menu
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+        <item
+            android:id="@+id/page_1"
+            android:icon="@drawable/ic_baseline_home_24"
+            android:title="@string/text_label_1"
+            app:showAsAction="always"
+            />
+        <item
+            android:id="@+id/page_2"
+            android:icon="@drawable/ic_baseline_favorite_24"
+            android:title="@string/text_label_2"
+            app:showAsAction="always"
+            />
+
+        <item
+            android:id="@+id/page_3"
+            android:icon="@drawable/ic_baseline_favorite_24"
+            android:title="@string/text_label_3"/>
+
     <item
-        android:id="@+id/page_1"
-        android:enabled="true"
-        android:icon="@drawable/ic_topic_round_24"
-        android:title="@string/text_label_1"/>
-    <item
-        android:id="@+id/page_2"
-        android:enabled="true"
-        android:icon="@drawable/ic_favorite_round_24"
-        android:title="@string/text_label_2"/>
-    <item
-        android:id="@+id/page_3"
-        android:enabled="true"
+        android:id="@+id/page_4"
         android:icon="@drawable/ic_face_24"
-        android:title="@string/text_label_3"/>
-</menu>
+        android:title="Fonctionnalitées"/>
+    <item
+        android:id="@+id/page_5"
+        android:icon="@drawable/ic_face_24"
+        android:title="Librairies"/>
+    </menu>

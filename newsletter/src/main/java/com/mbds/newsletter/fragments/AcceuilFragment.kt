@@ -1,5 +1,6 @@
 package com.mbds.newsletter.fragments
 
+import android.os.Binder
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -44,7 +45,6 @@ class AcceuilFragment(private val activityRoot: MainActivity): Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
-
     }
 
     override fun onCreateView(

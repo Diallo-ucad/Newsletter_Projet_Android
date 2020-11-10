@@ -2,6 +2,9 @@ package com.mbds.newsletter
 
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -9,7 +12,9 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.mbds.newsletter.fragments.AcceuilFragment
 import com.mbds.newsletter.fragments.ArticlesFragment
+import com.mbds.newsletter.fragments.aproposdenous.AproposDeNousFonctionnalitiesFragment
 import com.mbds.newsletter.fragments.aproposdenous.AproposDeNousdeveloppersFragment
+import com.mbds.newsletter.fragments.aproposdenous.AproposDeNouslibrairiesFragment
 import com.mbds.newsletter.fragments.favoris.ArticleFavorisFragment
 import com.mbds.newsletter.model.ArticleItem
 import com.mbds.newsletter.model.Category
@@ -27,28 +32,7 @@ class MainActivity : AppCompatActivity(), CellClickListener {
         //sharedPref.edit().clear().commit()
         setContentView(R.layout.activity_main)
         changeFragment(AcceuilFragment(this))
-        val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottom_navigation)
-        bottomNavigationView.setOnNavigationItemSelectedListener {
-            when (it.itemId) {
-                R.id.page_1 -> changeFragment(AcceuilFragment(this))
-                R.id.page_2 -> changeFragment(ArticleFavorisFragment(this))
-                R.id.page_3 -> changeFragment(AproposDeNousdeveloppersFragment(this))
-            }
-            true
-        }
-        /*
-        if (Contents.isFetched.not()){
-            val activityRout=this
-            // Coroutine
-            GlobalScope.launch(Dispatchers.Main) {
-                Contents.fetchAllArticles()
-               changeFragment(AcceuilFragment(activityRout))
-            }
-        }
-        else {
-             changeFragment(AcceuilFragment(this))
-        }
-         */
+
     }
 
     fun onFavArticle( article: ArticleItem){
@@ -93,6 +77,43 @@ class MainActivity : AppCompatActivity(), CellClickListener {
         println("Catégory cliquée : $category")
         changeFragment(ArticlesFragment(category, this))
     }
+    /**
+     * gestion des menus
+     */
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.bottom_navigation_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle action bar item clicks here.
+        val id = item.getItemId()
+
+        if (id == R.id.page_1) {
+            changeFragment(AcceuilFragment(this))
+            return true
+        }
+        if (id == R.id.page_2) {
+            changeFragment(ArticleFavorisFragment(this))
+            return true
+        }
+        if (id == R.id.page_3) {
+           changeFragment(AproposDeNousdeveloppersFragment(this))
+            return true
+        }
+        if (id == R.id.page_4) {
+            changeFragment(AproposDeNousFonctionnalitiesFragment(this))
+            return true
+        }
+        if (id == R.id.page_5) {
+            changeFragment(AproposDeNouslibrairiesFragment(this))
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
 }
 
 /**
