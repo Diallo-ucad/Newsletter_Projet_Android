@@ -8,9 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.mbds.newsletter.MainActivity
 import com.mbds.newsletter.R
 import com.mbds.newsletter.adapters.ArticleRecyclerViewAdapter
-import com.mbds.newsletter.model.Category
 import com.mbds.newsletter.repository.Contents
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -19,7 +19,7 @@ import kotlinx.coroutines.launch
 /**
  * A fragment representing a list of Items.
  */
-class ArticleFavorisFragment() : Fragment() {
+class ArticleFavorisFragment(val root: MainActivity) : Fragment() {
     private var columnCount = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,9 +43,10 @@ class ArticleFavorisFragment() : Fragment() {
                     else -> GridLayoutManager(context, columnCount)
                 }
                 GlobalScope.launch(Dispatchers.Main) {
-                    adapter = Contents.listArticleFavori()?.let {
+                    adapter = root.getListArticlesFav()?.let {
                         ArticleRecyclerViewAdapter(
-                            it
+                            it,
+                            root
                         )
                     }
                     layoutManager = GridLayoutManager(view.context, 1)

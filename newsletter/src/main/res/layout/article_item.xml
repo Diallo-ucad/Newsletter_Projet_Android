@@ -79,15 +79,14 @@
 
             <Button
                 android:id="@+id/btn_favories"
-                android:layout_width="39dp"
-                android:layout_height="33dp"
+                android:layout_width="25dp"
+                android:layout_height="24dp"
                 android:layout_row="0"
                 android:layout_column="3"
                 android:layout_margin="10dp"
-                android:background="@drawable/ic_favorite_red_24"
+                android:background="@drawable/ic_favorite_border_24"
                 android:gravity="bottom|end"
-                android:text=""
-                app:backgroundTint="#DC1212" />
+                app:backgroundTint="@color/black" />
         </GridLayout>
     </LinearLayout>
 
