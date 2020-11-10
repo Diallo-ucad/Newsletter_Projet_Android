@@ -31,7 +31,6 @@ class AproposDeNouslibrairiesFragment(private val cellClickListener: CellClickLi
         val adapterRecycler = AproposDenousLibrairiesRecyclerViewAdapter(aproposdenousLibrairiesitem, cellClickListener)
         recyclerViewlibrairie.layoutManager = GridLayoutManager(view.context, 1)
         recyclerViewlibrairie.adapter = adapterRecycler
-
     }
 
 }

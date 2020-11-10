@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity(), CellClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //sharedPref.edit().clear().commit()
+        sharedPref.edit().clear().commit()
         setContentView(R.layout.activity_main)
         changeFragment(AcceuilFragment(this))
 
