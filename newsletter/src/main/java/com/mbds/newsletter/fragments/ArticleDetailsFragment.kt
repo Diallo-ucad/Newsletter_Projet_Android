@@ -47,6 +47,8 @@ class ArticleDetailsFragment(
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        activity?.title = "Article détails"
+
         val view = inflater.inflate(R.layout.fragment_article_details, container, false)
         val contentView: TextView = view.findViewById(R.id.article_detail_title)
         val imgView: ImageView = view.findViewById(R.id.article_detail_img)
