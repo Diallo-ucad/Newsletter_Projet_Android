@@ -3,18 +3,18 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="10dp"
-    android:padding="1dp"
+    android:layout_height="wrap_content"
    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
         android:orientation="vertical"
+        android:layout_marginBottom="5dp"
         tools:ignore="MissingConstraints">
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/fonctionalitie_name"
+            android:textStyle="bold"
+            android:textSize="15dp"
             android:text="FONCTION NAME"
             android:layout_marginBottom="1dp"
             android:layout_width="match_parent"
@@ -25,7 +25,9 @@
             android:id="@+id/fonctionalitie_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="1dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginBottom="10dp"
             android:text="FONCTION DESCRIPTION">
         </com.google.android.material.textview.MaterialTextView>
     </LinearLayout>

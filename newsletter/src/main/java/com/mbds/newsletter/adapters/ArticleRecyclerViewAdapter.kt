@@ -73,7 +73,6 @@ class ArticleRecyclerViewAdapter(
                 root.onFavArticle(item)
                 Toast.makeText(root,"ajouté aux favoris", Toast.LENGTH_SHORT).show()
             }
-            println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ ${it}")
         }
     }
 
