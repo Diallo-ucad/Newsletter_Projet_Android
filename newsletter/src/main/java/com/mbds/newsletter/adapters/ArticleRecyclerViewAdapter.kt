@@ -29,8 +29,6 @@ class ArticleRecyclerViewAdapter(
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = values[position]
-
-        //holder.btnOpenUri.tag = item.url
         holder.articleItem.tag = item
         val description: String = when(item.description != null){
             true -> item.description
@@ -91,7 +89,6 @@ class ArticleRecyclerViewAdapter(
         val dateView: TextView = view.findViewById(R.id.article_date)
         val btnFavView: Button = view.findViewById(R.id.btn_favories)
         val articleItem: MaterialCardView = view.findViewById(R.id.article_item)
-        //val btnOpenUri: Button = view.findViewById(R.id.btn_open_article_to_nav)
 
         override fun toString(): String {
             return super.toString() + " '" + contentView.text + "'"
