@@ -21,7 +21,8 @@
         android:layout_height="wrap_content"
         android:text="OUVRIR PAR CATEGORIE"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="246dp" />
+        tools:layout_editor_absoluteY="246dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/openByCountry"
