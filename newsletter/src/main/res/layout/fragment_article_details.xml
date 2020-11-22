@@ -3,15 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="15dp"
+    android:layout_height="match_parent"
     android:padding="5dp"
     app:cardCornerRadius="2dp"
     app:cardElevation="0dp"
     app:checkedIconTint="#D10F0F"
-    android:id="@+id/article_item"
+    android:id="@+id/article_detail"
     app:shapeAppearance="@color/bottom_nav"
-    android:onClick="onClickToArticleItem"
     app:strokeColor="@color/teal_200"
     app:strokeWidth="0.7dp">
 
@@ -22,14 +20,14 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/article_img"
+            android:id="@+id/article_detail_img"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
             android:src="@drawable/ic_launcher_background" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/article_title"
+            android:id="@+id/article_detail_title"
             style="@style/TextAppearance.AppCompat.Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -40,7 +38,7 @@
             android:textAppearance="?attr/textAppearanceListItem" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/article_description"
+            android:id="@+id/article_detail_description"
             style="@style/TextAppearance.AppCompat.Body2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -59,7 +57,7 @@
             android:padding="5dp">
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/article_author"
+                android:id="@+id/article_detail_author"
                 style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -68,7 +66,7 @@
                 android:textAppearance="?attr/textAppearanceListItem" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/article_date"
+                android:id="@+id/article_detail_date"
                 style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
                 android:layout_width="86dp"
                 android:layout_height="33dp"
@@ -84,15 +82,16 @@
             android:layout_height="wrap_content"
             >
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_open_article_detail_to_nav"
                 android:onClick="onClickToOpenLinkArticle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ouvrir l'article"
+                android:text="Lire l'article"
                 style="?attr/borderlessButtonStyle"
                 />
 
             <Button
-                android:id="@+id/btn_favories"
+                android:id="@+id/btn_favories_detail"
                 android:layout_width="25dp"
                 android:layout_height="24dp"
                 android:layout_row="0"

@@ -14,6 +14,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.mbds.newsletter.fragments.AcceuilFragment
+import com.mbds.newsletter.fragments.ArticleDetailsFragment
 import com.mbds.newsletter.fragments.ArticlesFragment
 import com.mbds.newsletter.fragments.aproposdenous.AproposDeNousFonctionnalitiesFragment
 import com.mbds.newsletter.fragments.aproposdenous.AproposDeNousdeveloppersFragment
@@ -22,6 +23,7 @@ import com.mbds.newsletter.fragments.favoris.ArticleFavorisFragment
 import com.mbds.newsletter.model.ArticleItem
 import com.mbds.newsletter.model.Category
 import com.mbds.newsletter.utils.CellClickListener
+import java.util.*
 
 
 class MainActivity : AppCompatActivity(), CellClickListener {
@@ -117,7 +119,23 @@ class MainActivity : AppCompatActivity(), CellClickListener {
         return super.onOptionsItemSelected(item)
     }
 
+    fun isArticleFav(articleItem: ArticleItem):Boolean{
+        for (item: ArticleItem in getListArticlesFav()){
+            if (item.url == articleItem.url) return true
+
+        }
+        return false
+    }
+
     // Les bouttons
+    fun onClickToArticleItem(view: View){
+        val articleItem: ArticleItem = view.tag as ArticleItem
+        changeFragment(
+            ArticleDetailsFragment(articleItem, this)
+        )
+
+    }
+
     fun onClickToOpenLinkArticle(view: View){
         val uri: Uri = Uri.parse(view.tag as String)
         startActivity(Intent(Intent.ACTION_VIEW, uri))

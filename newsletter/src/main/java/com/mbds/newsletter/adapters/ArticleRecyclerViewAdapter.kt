@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import com.bumptech.glide.Glide
+import com.google.android.material.card.MaterialCardView
 import com.mbds.newsletter.MainActivity
 import com.mbds.newsletter.R
 
@@ -29,7 +30,8 @@ class ArticleRecyclerViewAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = values[position]
 
-        holder.btnOpenUri.tag = item.url
+        //holder.btnOpenUri.tag = item.url
+        holder.articleItem.tag = item
         val description: String = when(item.description != null){
             true -> item.description
             else -> ""
@@ -54,18 +56,18 @@ class ArticleRecyclerViewAdapter(
         Glide
             .with(holder.view)
             .load(item.urlToImage)
-            .centerCrop()
+            .fitCenter()
             .placeholder(R.drawable.placeholder)
             .into(holder.imgView)
 
-        if (isArticleFav(item)){
+        if (root.isArticleFav(item)){
             holder.btnFavView.setBackgroundResource(R.drawable.ic_favorite_round_24)
         }
         else {
             holder.btnFavView.setBackgroundResource(R.drawable.ic_favorite_border_24)
         }
         holder.btnFavView.setOnClickListener{
-            if (isArticleFav(item)){
+            if (root.isArticleFav(item)){
                 holder.btnFavView.setBackgroundResource(R.drawable.ic_favorite_border_24)
                 root.onRemoveFavArticle(item)
                 Toast.makeText(root,"retiré des favoris", Toast.LENGTH_SHORT).show()
@@ -80,13 +82,6 @@ class ArticleRecyclerViewAdapter(
 
     override fun getItemCount(): Int = values.size
 
-    fun isArticleFav(articleItem: ArticleItem):Boolean{
-        for (item: ArticleItem in root.getListArticlesFav()){
-            if (item.url == articleItem.url) return true
-
-        }
-        return false
-    }
 
     inner class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         val contentView: TextView = view.findViewById(R.id.article_title)
@@ -95,7 +90,8 @@ class ArticleRecyclerViewAdapter(
         val authorView: TextView = view.findViewById(R.id.article_author)
         val dateView: TextView = view.findViewById(R.id.article_date)
         val btnFavView: Button = view.findViewById(R.id.btn_favories)
-        val btnOpenUri: Button = view.findViewById(R.id.btn_open_article_to_nav)
+        val articleItem: MaterialCardView = view.findViewById(R.id.article_item)
+        //val btnOpenUri: Button = view.findViewById(R.id.btn_open_article_to_nav)
 
         override fun toString(): String {
             return super.toString() + " '" + contentView.text + "'"
