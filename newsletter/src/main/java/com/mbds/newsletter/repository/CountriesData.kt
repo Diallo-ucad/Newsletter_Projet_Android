@@ -23,14 +23,6 @@ object CountriesData {
         Category(
             category="",
             source="",
-            country="en",
-            name = "Pays",
-            label = "angleterre",
-            image = "https://picsum.photos/500/300?random=2"
-        ),
-        Category(
-            category="",
-            source="",
             country="ch",
             name = "Pays",
             label = "chine",
