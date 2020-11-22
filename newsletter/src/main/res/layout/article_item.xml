@@ -10,6 +10,7 @@
     app:cardElevation="0dp"
     app:checkedIconTint="#D10F0F"
     app:shapeAppearance="@color/bottom_nav"
+    android:onClick="onClickToArticleItem"
     app:strokeColor="@color/teal_200"
     app:strokeWidth="0.7dp">
 
@@ -88,6 +89,21 @@
                 android:gravity="bottom|end"
                 app:backgroundTint="@color/black" />
         </GridLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_open_article_to_nav"
+                android:onClick="onClickToOpenLinkArticle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ouvrir l'article"
+                style="?attr/borderlessButtonStyle"
+                />
+        </LinearLayout>
     </LinearLayout>
+
+
 
 </com.google.android.material.card.MaterialCardView>
